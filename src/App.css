@@ -1,38 +1,102 @@
-.App {
+
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url('fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: RobotoCondensed-Bold;
+    src: url('fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf');
+}
+
+body {
+  font-family: RobotoCondensed-Regular, Arial, sans-serif;
+  background: rgb(235, 239, 253);
+  background: linear-gradient(180deg, rgba(222,230,255,1) 0%, rgb(249, 250, 255) 2%, rgba(255,255,255,1) 100%) no-repeat;
+}
+
+header {
+  font-family: RobotoCondensed-Bold, Arial, sans-serif;
+  min-height: 3em;
+  margin-top: 2em;
   text-align: center;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer {
+  font-size: 0.6em;
+  min-height: 3em;
+  text-align: center;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+hr {
+  border-top: 2px solid #ddd;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  font-size: 25px;
 }
+
+.explainer {
+  margin-top: 1em;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+table {
+  table-layout: fixed;
+  border-bottom: 1px;
+}
+
+th {
+  font-size: 0.7em;
+}
+input {
+  margin: 0px;
+}
+td.task-field, th.task-field {
+  width: 40%;
+}
+input.task-field {
+  min-width: 100%;
+  /*width: 100%;*/
+  background: #EFE !important;
+}
+input.var-field {
+  width: 100%;
+  min-width: 3em;
+  background: #FEE !important;
+}
+input.wsjf-field {
+  width: 100%;
+  min-width: 3em;
+  background: #FFE !important;
+}
+th.delete, td.delete {
+  width: 3em;
+}
+.delete-button {
+  cursor: pointer;
+}
+.sort-button {
+  font-weight: bolder;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.buttons {
+  margin-top: 0.4em;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+.button.primary {
+  justify-content: center;
+  margin-top: 0.5em;
+  font-size: 0.8em;
+}
+

@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8"/>
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+  <link rel="icon" href="%PUBLIC_URL%/Calculator_icon.svg"/>
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/Calculator_icon.svg"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="theme-color" content="#000000"/>
-  <meta name="description" content="WSJF"
-  />
-  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
-  <!--
-    manifest.json provides metadata used when your web app is installed on a
-    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-  -->
-  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-  <!--
-    Notice the use of %PUBLIC_URL% in the tags above.
-    It will be replaced with the URL of the `public` folder during the build.
-    Only files inside the `public` folder can be referenced from the HTML.
-
-    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-    work correctly both with client-side routing and a non-root public URL.
-    Learn how to configure a non-root public URL by running `npm run build`.
-  -->
-
+  <meta name="description" content="WSJF"/>
   <link rel="stylesheet" href="https://unpkg.com/chota@latest">
-
   <title>WSJF Calculator</title>
-
 </head>
 
 <body>
 
 <div className="App" class="container">
 
-  <header className="App-header">
-    <h1>📊&nbsp; WSJF Calculator</h1>
+  <header>
+    <img src="%PUBLIC_URL%/Calculator_icon.svg" class="header-image">
+    <h1>WSJF Calculator</h1>
   </header>
 
   <div id="root"></div>
   <noscript>You need to enable JavaScript to run this app.</noscript>
 
   <hr>
+
   <div class="explainer">
-    <p><strong>Weighted Shortest Job First</strong> is a helpful prioritisation technique.</p>
+    <p><strong>Weighted Shortest Job First</strong> is a prioritisation technique.</p>
     <p>The tasks with the highest WSJF scores will provide the best "bang for your buck".</p>
     <p>
       For more details see these great articles at
-      <a href="https://www.techagilist.com/agile/wsjf-weighted-shortest-job-first-prioritization-technique/" target="_blank">Tech Agilist</a>
+      <a href="https://www.techagilist.com/agile/wsjf-weighted-shortest-job-first-prioritization-technique/"
+         target="_blank">Tech Agilist</a>
       and
       <a href="https://www.scaledagileframework.com/wsjf/">SAFe</a>.
     </p>
-
   </div>
 
   <footer>
-    Built with 🍺 by <a href="https://github.com/danmoz">@danmoz</a>
+    <p><a href="https://commons.wikimedia.org/wiki/File:Calculator_icon.svg">Calculator image</a> © Boca Tutor licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC
+      Attribution-ShareAlike 3.0</a></p>
+    <p>Built with 🍺 by <a href="https://github.com/danmoz">@danmoz</a></p>
   </footer>
 
 </div>

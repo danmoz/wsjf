@@ -23,6 +23,10 @@ header {
   color: black;
 }
 
+img {
+  height: 50px;
+}
+
 footer {
   font-size: 0.6em;
   min-height: 3em;
@@ -32,10 +36,6 @@ footer {
 
 hr {
   border-top: 2px solid #ddd;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .container {

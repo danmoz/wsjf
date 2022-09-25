@@ -1,6 +1,8 @@
 # WSJF Calculator
 
-This is a simple web-based tools for calculating WSJF scores.
+This is a simple web-based tool for calculating WSJF scores.
+
+To use the calculator go to [wsjf.app](https://wsjf.app)
 
 # Getting Started
 

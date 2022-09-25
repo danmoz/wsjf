@@ -1,4 +1,5 @@
 import './App.css';
+import './tooltip.css';
 import React from "react";
 
 
@@ -6,7 +7,7 @@ class App extends React.Component {
 
   render() {
     return (
-        <Calculator/>
+      <Calculator/>
     )
   }
 }
@@ -32,12 +33,13 @@ class Calculator extends React.Component {
       ],
       sortAsc: false,
     }
-    this.handleFieldChange=this.handleFieldChange.bind(this)
-    this.handleDeleteClick=this.handleDeleteClick.bind(this)
-    this.handleAddClick=this.handleAddClick.bind(this)
-    this.handleSortClick=this.handleSortClick.bind(this)
-    this.componentDidMount=this.componentDidMount.bind(this)
+    this.handleFieldChange = this.handleFieldChange.bind(this)
+    this.handleDeleteClick = this.handleDeleteClick.bind(this)
+    this.handleAddClick = this.handleAddClick.bind(this)
+    this.handleSortClick = this.handleSortClick.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
+
   componentDidMount() {
     let newRows = this.copyRows()
     for (let i = 0; i < newRows.length; i++) {
@@ -80,10 +82,14 @@ class Calculator extends React.Component {
     let newRows = this.copyRows()
     const sortAscNew = !this.state.sortAsc
     if (sortAscNew === true) {
-      newRows.sort((a, b) => {return a.wsjf - b.wsjf;})
+      newRows.sort((a, b) => {
+        return a.wsjf - b.wsjf;
+      })
       console.log("Sort ascending")
     } else {
-      newRows.sort((a, b) => {return b.wsjf - a.wsjf;})
+      newRows.sort((a, b) => {
+        return b.wsjf - a.wsjf;
+      })
       console.log("Sort descending")
     }
     this.setState({rows: newRows, sortAsc: sortAscNew})
@@ -115,13 +121,39 @@ class Calculator extends React.Component {
         <table>
           <thead>
           <tr>
-            <th className="task-field"><strong data-tooltip="Tooltip">Task</strong></th>
-            <th className="var-field"><strong data-tooltip="Tooltip">Business<br/>Value</strong></th>
-            <th className="var-field"><strong data-tooltip="Tooltip">Time<br/>Criticality</strong></th>
-            <th className="var-field"><strong data-tooltip="Tooltip">Risk /<br/>Opportunity</strong></th>
-            <th className="var-field"><strong data-tooltip="Tooltip">Size</strong></th>
+            <th className="task-field">
+              <div className="tooltip">
+                <strong>Task</strong>
+                <span className="tooltiptext">A description of the task</span>
+              </div>
+            </th>
+            <th className="var-field">
+              <div className="tooltip">
+                <strong>Business<br/>Value</strong>
+                <span className="tooltiptext">How beneficial is this task to our organisation?</span>
+              </div>
+            </th>
+            <th className="var-field">
+              <div className="tooltip">
+                <strong>Time<br/>Criticality</strong>
+                <span className="tooltiptext">How urgent is it for the business? </span>
+              </div>
+            </th>
+            <th className="var-field">
+              <div className="tooltip"><strong>Risk /<br/>Opportunity</strong>
+                <span className="tooltiptext">Will this feature reduce our risk or help us get new business opportunities?</span>
+              </div>
+            </th>
+            <th className="var-field">
+              <div className="tooltip"><strong>Size</strong>
+                <span className="tooltiptext">How long will the implementation take?</span>
+              </div>
+            </th>
             <th className="wsjf-field">
-              <strong data-tooltip="Tooltip">WSJF</strong>
+              <div className="tooltip">
+                <strong>WSJF</strong>
+                <span className="tooltiptext">WSJF score (prioritise higher scores)</span>
+              </div>
               <SortButton sortAsc={this.state.sortAsc} handleSortClick={this.handleSortClick}>Sort</SortButton>
             </th>
             <th className="delete">&nbsp;</th>
@@ -145,14 +177,19 @@ class Row extends React.Component {
     return (
       <tr>
         <React.Fragment>
-          <TaskField value={this.props.row.task} fieldName='task' rowIndex={this.props.rowIndex} handleFieldChange={this.props.handleFieldChange} />
-          <VarField value={this.props.row.bizValue} fieldName='bizValue' rowIndex={this.props.rowIndex} handleFieldChange={this.props.handleFieldChange} />
-          <VarField value={this.props.row.timeCriticality} fieldName='timeCriticality' rowIndex={this.props.rowIndex} handleFieldChange={this.props.handleFieldChange} />
-          <VarField value={this.props.row.riskOpportunity} fieldName='riskOpportunity' rowIndex={this.props.rowIndex} handleFieldChange={this.props.handleFieldChange} />
-          <VarField value={this.props.row.size} fieldName='size' rowIndex={this.props.rowIndex} handleFieldChange={this.props.handleFieldChange} />
-          <WsjfField value={this.props.row.wsjf} />
+          <TaskField value={this.props.row.task} fieldName='task' rowIndex={this.props.rowIndex}
+                     handleFieldChange={this.props.handleFieldChange}/>
+          <VarField value={this.props.row.bizValue} fieldName='bizValue' rowIndex={this.props.rowIndex}
+                    handleFieldChange={this.props.handleFieldChange}/>
+          <VarField value={this.props.row.timeCriticality} fieldName='timeCriticality' rowIndex={this.props.rowIndex}
+                    handleFieldChange={this.props.handleFieldChange}/>
+          <VarField value={this.props.row.riskOpportunity} fieldName='riskOpportunity' rowIndex={this.props.rowIndex}
+                    handleFieldChange={this.props.handleFieldChange}/>
+          <VarField value={this.props.row.size} fieldName='size' rowIndex={this.props.rowIndex}
+                    handleFieldChange={this.props.handleFieldChange}/>
+          <WsjfField value={this.props.row.wsjf}/>
         </React.Fragment>
-        <DeleteButton rowIndex={this.props.rowIndex} handleDeleteClick={this.props.handleDeleteClick} />
+        <DeleteButton rowIndex={this.props.rowIndex} handleDeleteClick={this.props.handleDeleteClick}/>
       </tr>
     );
   }

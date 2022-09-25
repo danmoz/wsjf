@@ -28,6 +28,7 @@ img {
 }
 
 footer {
+  padding-top: 1em;
   font-size: 0.6em;
   min-height: 3em;
   text-align: center;

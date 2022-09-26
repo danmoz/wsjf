@@ -20,7 +20,7 @@ header {
   min-height: 3em;
   margin-top: 2em;
   text-align: center;
-  color: black;
+  color: #111;
 }
 
 img {
@@ -32,7 +32,7 @@ footer {
   font-size: 0.6em;
   min-height: 3em;
   text-align: center;
-  color: black;
+  color: #111;
 }
 
 hr {
@@ -66,12 +66,12 @@ td.task-field, th.task-field {
 input.task-field {
   min-width: 100%;
   /*width: 100%;*/
-  background: #EFE !important;
+  background: #ffeefa !important;
 }
 input.var-field {
   width: 100%;
   min-width: 3em;
-  background: #FEE !important;
+  background: #EFE !important;
 }
 input.wsjf-field {
   width: 100%;
